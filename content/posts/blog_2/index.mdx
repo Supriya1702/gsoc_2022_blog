@@ -1,0 +1,48 @@
+---
+title: Coding Begins
+date: 2022-07-09
+description:
+
+---
+
+The coding period begins! Now, it's time for us contributors to pull up our socks and dive into coding.
+Firstly, my task for Non-Air Diluent project was to somehow get the broadening coeffcients for a specific 
+molecule using HAPI.
+I started off by the reading the HAPI manual to understand the functioning of HAPI. It was structured properly
+and I started implementing the code as well to understand it properly.
+First to use any functionlity of hapi we need to use `from hapi import *` (for importing all fucntions, we can mention any particulr one too).
+To start working with HAPI, the user should import all functions from the module “hapi.py”:
+
+First, let's choose a folder for our local database. Every time you start your Python project, you have to 
+specify explicitly the name of the database folder db_begin('data')
+So, let's download some data from the server and do some processing on it. Suppose that we want to 
+get line-by-line data on the main isotopologue of H2O.
+For retrieving the data to the local database, the user has to specify the following parameters:
+1) Name of the local table which will store the downloaded data.
+2) Either a pair of molecule and isotopologue HITRAN numbers (M and I), or a "global" isotopologue 
+ID (iso_id).
+3) Wavenumber range (nu_min and nu_max)
+N.B. If you specify a name which already exists in your local folder, the existing table with that name 
+will be overwritten.
+To learn about the table we just downloaded, let's use a function "describeTable".
+
+The local data is downloaded from the HITRANonline portal (http://hitran.org) using API functions 
+(fetch and fetch_by_ids). Downloaded data is stored in the folder which was specified in a call to 
+db_begin().
+The structure of a local data folder is as follows (assuming that you have already downloaded several 
+tables from HITRANonline):
+Folder name<br />
+ | <br />
+ |----- table1.data<br />
+ | table1.header<br />
+ |<br />
+ |----- table2.data<br />
+ | table2.header<br />
+…<br />
+ |----- tableN.data<br />
+ tableN.header<br />
+
+The typical format is as follows: <table_name>.data for line-by-line data, and <table_name>.header
+for table description (field names and positions, format, number of lines etc...). The default file format 
+is 160-character HITRAN format 
+
