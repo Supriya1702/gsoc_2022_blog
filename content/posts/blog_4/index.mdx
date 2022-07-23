@@ -36,8 +36,8 @@ the molecule.hdf5 file data.<br/>
 Eventually, this method up until now making use of getColumn and parsing these extra columns were getting more complicated and 
 and even line data wasn't aligning due to inconsistent parsing.<br/>
 
-Hence, Dr. Erwan suggested to RADIS parsers with HITRAN parsers.<br/>
-He digged into HAPI.py and his conclusions so far:<br/>
+Hence, Dr. Erwan suggested to replace RADIS parsers with HITRAN parsers.<br/>
+HIs conclusions so far:<br/>
 1. db_begin loads all the file content in a dictionary LOCAL_TABLE_CACHE. It's very easy to access from there. Just use this rather than the more complicated getColumn() approach ?<br/>
 2. In the perf tests he just run, HAPI's db_begin parsing is ~3x faster than the RADIS's optimized hit2df.  Well done HITRAN team.<br/>
 Therefore we should refactor radis.io.hitran.py to use the db_begin + read LOCAL_TABLE_CACHE approach rather than use hit2df.It would improve performances; and make it easier to parse & add your own columns.    
@@ -88,7 +88,7 @@ Or  user will always have to provide input for the column they want in fetch_hit
 
 
 
-Now,  loading all columns isn't that simple because  But there is one problem that for some columns in even PARAMETER_META it's giving  "INTERNAL SERVER ERROR".
+Now,  loading all columns isn't that simple because there is one problem that for some columns in even PARAMETER_META it's giving  "INTERNAL SERVER ERROR".
 Hence, we need to be selective about columns in PARAMETER_META too!
 We're trying to find a way to select which columns in PARAMETER_META are required as loading all columns would crash.
 
