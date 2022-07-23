@@ -61,7 +61,7 @@ To download the data, simply call the function "fetch". This will establish a co
 server and get the data using the parameters listed above. For example: <br/>
 `fetch('H2O',1,1,3400,4100)` <br/>
 
-![H2O](./H2O.png) <br/>
+![H2o](./H2o.png) <br/>
 
 To get a list of tables which are already in the database, use the tableList() function (it takes no 
 arguments):<br/>
@@ -69,7 +69,7 @@ arguments):<br/>
 
 To learn about the table we just downloaded, let's use a function "describeTable"<br/>
 describeTable('H2O')<br/>
-![data](./data.png) <br/>
+![GSoC](./GSoC.png)
 
 
 Also, I learned about the select() function and how to apply certain conditions to query filetering conditions, accessing columns, specifiying a list of paremeters
@@ -78,10 +78,10 @@ saving query to disk.<br/>
 To calculate an absorption coefficient cross section:<br/>
 
 ```fetch('CO2',2,1,2000,2100)<br/>
-nu,coef = absorptionCoefficient_Lorentz(SourceTables='CO2', Diluent={'air':1.0})<br/>
-from pylab import plot <br/>
-plot(nu,coef)```<br/>
+nu,coef = absorptionCoefficient_Lorentz(SourceTables='CO2', Diluent={'air':1.0})
+from pylab import plot 
+plot(nu,coef)```
 
 
-This example calculates a Lorentz cross section using the whole set of lines in the "CO2" table<br/>
-![plot](./plot.png)
+This example calculates a Lorentz cross section using the whole set of lines in the "CO2" table
+![Plot](./Plot.png)
