@@ -11,7 +11,7 @@ molecule using HAPI.
 I started off by the reading the HAPI manual to understand the functioning of HAPI. It was structured properly so 
 I started implementing the code as well to understand it properly.
 
-First to use any functionlity of hapi we need to use `from hapi import *` (for importing all fucntions, we can mention any particulr one too).
+First to use any functionlity of hapi we need to use `from hapi import *` (for importing all functions, we can mention any particulr one too).
 To start working with HAPI, the user should import all functions from the module “hapi.py”:
 
 First, let's choose a folder for our local database. Every time you start your Python project, you have to 
@@ -19,11 +19,11 @@ specify explicitly the name of the database folder db_begin('data')
 So, let's download some data from the server and do some processing on it. Suppose that we want to 
 get line-by-line data on the main isotopologue of H2O.
 
-For retrieving the data to the local database, the user has to specify the following parameters:
-1) Name of the local table which will store the downloaded data.
+For retrieving the data to the local database, the user has to specify the following parameters:<br/>
+1) Name of the local table which will store the downloaded data.<br/>
 2) Either a pair of molecule and isotopologue HITRAN numbers (M and I), or a "global" isotopologue 
-ID (iso_id).
-3) Wavenumber range (nu_min and nu_max)
+ID (iso_id).<br/>
+3) Wavenumber range (nu_min and nu_max)<br/>
 
 If you specify a name which already exists in your local folder, the existing table with that name 
 will be overwritten.
@@ -61,7 +61,7 @@ To download the data, simply call the function "fetch". This will establish a co
 server and get the data using the parameters listed above. For example: <br/>
 `fetch('H2O',1,1,3400,4100)` <br/>
 
-![H2O](./H2O.png) <br/>
+![H2O](./H2O.PNG) <br/>
 
 To get a list of tables which are already in the database, use the tableList() function (it takes no 
 arguments):<br/>
@@ -69,7 +69,7 @@ arguments):<br/>
 
 To learn about the table we just downloaded, let's use a function "describeTable"<br/>
 describeTable('H2O')<br/>
-![data](./data.png) <br/>
+![data](./data.PNG) <br/>
 
 
 Also, I learned about the select() function and how to apply certain conditions to query filetering conditions, accessing columns, specifiying a list of paremeters
@@ -84,4 +84,4 @@ plot(nu,coef)```<br/>
 
 
 This example calculates a Lorentz cross section using the whole set of lines in the "CO2" table<br/>
-![plot](./plot.png)
+![plot](./plot.PNG)
