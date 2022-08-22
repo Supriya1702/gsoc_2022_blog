@@ -1,0 +1,22 @@
+---
+title: week 7 and week 8 (Mid-Term Evaluation!)
+date: 2022-07-30
+description: 
+
+---
+Now, this week was the Mid-Term Evaluation week and I was totally nervous about it. I knew that I had put alot of efforts and time into the project
+but was still anxious if I would pass or fail. Then finally I received my evaluation, guess what? I had passed with wonderful feedback!
+
+We as contributors also had to provide feedback about our mentors, team and GSoC experience. Needless to say,
+my mentors, team and the GSoC experience up until now was fabulous.
+
+
+Now coming to work, after researching more into the hapi codebase I found that rather than using "PARAMETER_META" to load indiviudal columns I could just pass groups of columns(these gtoups are already mentioned in Hapi) in "ParameterGroup" of fetch().
+There were some columns which were giving "INTERNAL SERVER ERROR". These error giving columns were ruining the code workflow and hence had to be removed. Also, one more thing that in one go hapi's fetch() method couldn't retrieve
+more than 80 columns but for my project "Non-Air Diluent" but apparently we did not require those columns(Thank God!) and mostly needed "broadening coefficient" columns like "gamma_CO2, n_CO2" etc.
+Since we were anyhow loading columns upto 80 Dr. Erwan suggested to remove the 'sdvoigt' and 'galatry' groups to make the count of columns less than 80 and voila we now had 78 columns.
+
+
+
+
+
