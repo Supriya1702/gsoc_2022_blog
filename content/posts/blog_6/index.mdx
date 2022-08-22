@@ -1,0 +1,38 @@
+---
+title: week 9 and week 10
+date: 2022-08-16
+description: 
+
+---
+
+Dr. Erwan and Mr. Anand (my mentors) suggested since my Non-Air Diluent project was getting large I should first create a separate PR for
+fetch_hitran() changes and then after merging these changes I should carry on with the changes for calculating spectrum for a molcule in non-air Diluent
+which had changes in calc.py, broadening.py, loader.py etc.
+
+So, I created PR https://github.com/radis/radis/pull/505  and after a lot of iterations it passed all test cases finally got merged!.
+This was my first PR for this project that was merged.
+*This PR basically addressed:
+  *Replacing hit2df with LOCAL_TABLE_CACHE
+  *added a parameter extra_params in fetch_hitran() and dbmanager.py
+  *downloading all columns when extra_params = 'all'
+  *Adding conditions to raise AccuracyWarning when All columns are not downloaded currently.
+  *cleaning of NaN value columns after downloading all columns in hdf5.py
+  *Modularized code by creating new function post_process_hitran_data for parsing non-equilibrium parameters
+  *added ldb.get_columns function
+  *Added test for get_columns in test_hdf5.py and some minor changes
+
+
+after running :
+```
+from radis.io.hitran import fetch_hitran
+df = fetch_hitran("CO", extra_params="all", cache="regen") #regen to regenerate file
+print(df.columns)
+```
+you'll get these columns--> the Nan value columns are removed to save disk space which means out of 78 only the below columns have values for
+CO molcule
+
+Index(['id', 'iso', 'wav', 'int', 'A', 'airbrd', 'selbrd', 'El', 'Tdpair',
+       'Pshft', 'gp', 'gpp', 'trans_id', 'gamma_h2', 'delta_h2', 'n_h2',
+       'gamma_co2', 'delta_co2', 'n_co2', 'gamma_he', 'delta_he', 'n_he',
+       'gamma_h2o', 'n_h2o', 'y_air', 'y_self', 'branch', 'jl', 'vu', 'vl'],
+      dtype='object')
