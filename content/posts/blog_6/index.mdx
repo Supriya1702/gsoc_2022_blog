@@ -12,14 +12,14 @@ which had changes in calc.py, broadening.py, loader.py etc.
 So, I created PR https://github.com/radis/radis/pull/505  and after a lot of iterations it passed all test cases finally got merged!.
 This was my first PR for this project that was merged.<br/>
 *This PR basically addressed:<br/>
-  *Replacing hit2df with LOCAL_TABLE_CACHE<br/>
-  *added a parameter extra_params in fetch_hitran() and dbmanager.py<br/>
-  *downloading all columns when extra_params = 'all'<br/>
-  *Adding conditions to raise AccuracyWarning when All columns are not downloaded currently.<br/>
-  *cleaning of NaN value columns after downloading all columns in hdf5.py<br/>
-  *Modularized code by creating new function post_process_hitran_data for parsing non-equilibrium parameters<br/>
-  *added ldb.get_columns function<br/>
-  *Added test for get_columns in test_hdf5.py and some minor changes<br/>
+  1)Replacing hit2df with LOCAL_TABLE_CACHE<br/>
+  2)Added a parameter extra_params in fetch_hitran() and dbmanager.py<br/>
+  3)downloading all columns when extra_params = 'all'<br/>
+  4)Adding conditions to raise AccuracyWarning when All columns are not downloaded currently.<br/>
+  5)Cleaning of NaN value columns after downloading all columns in hdf5.py<br/>
+  6)Modularized code by creating new function post_process_hitran_data for parsing non-equilibrium parameters<br/>
+  7)Added ldb.get_columns function<br/>
+  8)Added test for get_columns in test_hdf5.py and some minor changes<br/>
 
 
 after running :
