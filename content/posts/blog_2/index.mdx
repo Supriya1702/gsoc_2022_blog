@@ -6,7 +6,26 @@ description:
 ---
 
 The coding period begins! Now, it's time for us contributors to pull up our socks and dive into coding.
-Firstly, my task for Non-Air Diluent project was to somehow get the broadening coeffcients for a specific 
+I can't emphasize more on how interesting and difficult things could get
+
+So let me talk about some little issues I raised and  PRs I generated
+
+https://github.com/radis/spectro101/pull/9 : PR raised and merged - spectroscopy 101 <br/>
+This tutorial notebook had some errors in it due to which some calculations and plots were wrong. I identified the issues and resolved it.<br/>
+https://github.com/radis/radis/pull/481: PR raised and merged - whitespaces fix <br/>
+While going through the documentation I realized that there were huge spaces around this diagram that I was studying. So, I corrected it with explicitly adding height and width parameters.<br/>
+
+https://github.com/radis/radis/issues/482 :Raised Issue which was resolved <br/>
+This was Raising KeyError while trying to execute fetch_hitemp('molecule_name') due to inconsistency in cache file creation and how it is being read <br/>
+It was resolved with Radis 0.13 (pip version) and the latest develop version from Github.
+https://github.com/radis/radis/issues/483 : Raised and Closed issue with solution <br/>
+ModuleNotFoundError: No module named 'radis_cython_extensions' when executing bash gendocs.sh<br/>
+This can be fixed by installing Microsoft C++ Build Tools from link- https://visualstudio.microsoft.com/visual-cpp-build-tools/ .<br/>
+https://github.com/radis/radis/issues/484: Raised And Closed issue with solution <br/>
+the exception Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/ obtained while installing radis using pip install -e . -v <br/>
+This can be fixed by installing Microsoft C++ Build Tools from link- https://visualstudio.microsoft.com/visual-cpp-build-tools/ <br/>
+
+Now coming to my project,firstly my task for Non-Air Diluent project was to somehow get the broadening coeffcients for a specific 
 molecule using HAPI.
 I started off by the reading the HAPI manual to understand the functioning of HAPI. It was structured properly so 
 I started implementing the code as well to understand it properly.
