@@ -57,7 +57,7 @@ Hence, now just by passing these extra columns as Parameters = ['gamma_CO2','n_C
 The final df returned by fetch_hitran() also contains basic + extra columns. If for a given molecule a column is not present then it simply adds NaN values to df and .hdf5 file for that column.
 ```
 from radis.io.hitran import fetch_hitran
-df = fetch_hitran("CO",["n_CO2","gamma_CO2"])
+df = fetch_hitran("CO",extra_params = ["n_CO2","gamma_CO2"])
 print(df)
 print(df.columns) 
 ```
